@@ -1,0 +1,355 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class AnimationGameFinal implements ActionListener {
+
+int x=10;
+int y1=1;
+int y2=1;
+int y3=1;
+int y4=1;
+int y5=1;
+int count1=0;
+int count2=0;
+int count3=0;
+int count4=0;
+int count5=0;
+int deadline1=0;
+int deadline2=0;
+int deadline3=0;
+int deadline4=0;
+int deadline5=0;
+int break1=0;
+int break2=0;
+int break3=0;
+int break4=0;
+int break5=0;
+int k1=0;
+int k2=0;
+int k3=0;
+int k4=0;
+int k5=0;
+int q1=0;
+int q2=0;
+int q3=0;
+int q4=0;
+int q5=0;
+JButton button1=new JButton("click1");
+JButton button2=new JButton("click2");
+JButton button3=new JButton("click3");
+JButton button4=new JButton("click4");
+JButton button5=new JButton("click5");
+
+
+public static void main (String[] args){
+	AnimationGameFinal gui=new AnimationGameFinal();
+	gui.go();
+}
+
+public void go(){
+		JFrame frame1=new JFrame();
+		frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		MyDrawPanelMove1 drawPanel1=new MyDrawPanelMove1();
+		
+		frame1.getContentPane().add(drawPanel1);
+		frame1.setSize(400,400);
+		frame1.setVisible(true);
+
+        MathRan1 mr1=new MathRan1();
+
+        y1=mr1.height();
+        y2=mr1.height();
+        y3=mr1.height();
+        y4=mr1.height();
+        y5=mr1.height();
+		        
+        deadline1=225;
+        deadline2=225;
+        deadline3=225;
+        deadline4=225;
+        deadline5=225;
+               
+        drawPanel1.add(button1);
+        drawPanel1.add(button2);
+        drawPanel1.add(button3);
+        drawPanel1.add(button4);
+        drawPanel1.add(button5);
+		
+        button1.addActionListener(this);
+        button2.addActionListener(this);
+        button3.addActionListener(this);
+        button4.addActionListener(this);
+        button5.addActionListener(this);
+		
+        y1=2*y1;
+        q1=y1/2;
+        
+        y2=2*y2;
+        q2=y2/2;
+        
+        y3=2*y3;
+        q3=y3/2;
+        
+        y4=2*y4;
+        q4=y4/2;
+        
+        y5=2*y5;
+        q5=y5/2;
+        
+        for(int i=0;i<10;i++){
+                i=i-1;
+	        
+                if((y1>0) && !(k1==20 && deadline1==200))
+                {
+                if(q1>0)
+                {
+                deadline1=deadline1-1;
+                q1=q1-1;
+                y1=y1-1;
+                }
+                else
+                {
+                deadline1=deadline1+1;
+                y1=y1-1;
+                }
+                }
+                else
+                {
+                if(y1<1)
+                {
+                break1=break1+1;
+                }
+                if(break1>=5)
+                {
+                break;
+                }
+                y1=mr1.height();
+                y1=2*y1;
+                q1=y1/2;
+                deadline1=225;
+                count1=0;
+                k1=0;
+                }
+
+                if((y2>0) && !(k2==20 && deadline2==200))
+                {
+                if(q2>0)
+                {
+                deadline2=deadline2-1;
+                q2=q2-1;
+                y2=y2-1;
+                }
+                else
+                {
+                deadline2=deadline2+1;
+                y2=y2-1;
+                }
+                }
+                else
+                {
+                if(y2<1)
+                {
+                break2=break2+1;
+                }
+                if(break2>=5)
+                {
+                break;
+                }
+                y2=mr1.height();
+                y2=2*y2;
+                q2=y2/2;
+                deadline2=225;
+                count2=0;
+                k2=0;
+                }
+
+                if((y3>0) && !(k3==20 && deadline3==200))
+                {
+                if(q3>0)
+                {
+                deadline3=deadline3-1;
+                q3=q3-1;
+                y3=y3-1;
+                }
+                else
+                {
+                deadline3=deadline3+1;
+                y3=y3-1;
+                }
+                }
+                else
+                {
+                if(y3<1)
+                {
+                break3=break3+1;
+                }
+                if(break3>=5)
+                {
+                break;
+                }
+                y3=mr1.height();
+                y3=2*y3;
+                q3=y3/2;
+                deadline3=225;
+                count3=0;
+                k3=0;
+                }
+
+                if((y4>0) && !(k4==20 && deadline4==200))
+                {
+                if(q4>0)
+                {
+                deadline4=deadline4-1;
+                q4=q4-1;
+                y4=y4-1;
+                }
+                else
+                {
+                deadline4=deadline4+1;
+                y4=y4-1;
+                }
+                }
+                else
+                {
+                if(y4<1)
+                {
+                break4=break4+1;
+                }
+                if(break4>=5)
+                {
+                break;
+                }
+                y4=mr1.height();
+                y4=2*y4;
+                q4=y4/2;
+                deadline4=225;
+                count4=0;
+                k4=0;
+                }
+
+                if((y5>0) && !(k5==20 && deadline5==200))
+                {
+                if(q5>0)
+                {
+                deadline5=deadline5-1;
+                q5=q5-1;
+                y5=y5-1;
+                }
+                else
+                {
+                deadline5=deadline5+1;
+                y5=y5-1;
+                }
+                }
+                else
+                {
+                if(y5<1)
+                {
+                break5=break5+1;
+                }
+                if(break5>=5)
+                {
+                break;
+                }
+                y5=mr1.height();
+                y5=2*y5;
+                q5=y5/2;
+                deadline5=225;
+                count5=0;
+                k5=0;
+                }
+               
+
+                drawPanel1.repaint();
+                
+                try{
+				Thread.sleep(50);
+				}catch(Exception ex){}
+                
+                }
+                System.out.println("game ove");
+                }
+               
+
+public void actionPerformed(ActionEvent event){
+if(event.getSource()==button1){
+k1=20;
+k2=0;
+k3=0;
+k4=0;
+k5=0;
+}
+if(event.getSource()==button2){
+k1=0;
+k2=20;
+k3=0;
+k4=0;
+k5=0;
+}
+if(event.getSource()==button3){
+k1=0;
+k2=0;
+k3=20;
+k4=0;
+k5=0;
+}
+if(event.getSource()==button4){
+k1=0;
+k2=0;
+k3=0;
+k4=20;
+k5=0;
+}
+if(event.getSource()==button5){
+k1=0;
+k2=0;
+k3=0;
+k4=0;
+k5=20;
+}
+
+}
+
+
+
+class MyDrawPanelMove1 extends JPanel{
+public void paintComponent(Graphics g){
+		g.setColor(Color.white);
+		g.fillRect(0, 0,this.getWidth(),this.getHeight());
+		
+		g.setColor(Color.orange);
+		g.fillRect(5,deadline1,100,25);
+		
+		g.setColor(Color.orange);
+		g.fillRect(115,deadline2,100,25);
+		
+		g.setColor(Color.orange);
+		g.fillRect(225,deadline3,100,25);
+		
+		g.setColor(Color.orange);
+		g.fillRect(335,deadline4,100,25);
+		
+		g.setColor(Color.orange);
+		g.fillRect(445,deadline5,100,25);
+		
+		
+		g.setColor(Color.black);
+		g.fillRect(5,225,100,25);
+		
+		g.setColor(Color.black);
+		g.fillRect(115,225,100,25);
+		
+		g.setColor(Color.black);
+		g.fillRect(225,225,100,25);
+		
+		g.setColor(Color.black);
+		g.fillRect(335,225,100,25);
+		
+		g.setColor(Color.black);
+		g.fillRect(445,225,100,25);
+}
+
+}
+}
