@@ -1,0 +1,11 @@
+public class MathRan1 {
+	int k;
+	public int height(){
+		int k=(int)(Math.random()*200);
+		if(k<50)
+			k=k+50;
+		return k;
+	}
+		public void donothing(){
+		}
+}
